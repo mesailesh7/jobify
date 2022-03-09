@@ -11,7 +11,7 @@ const initialState = {
   alertType: "",
 };
 
-  const AppContext = React.createContext();
+const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
