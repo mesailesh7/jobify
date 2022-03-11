@@ -6,7 +6,6 @@ import notFoundMiddleware from "./middleware/not-found.js";
 import errorHandleMiddleware from "./middleware/error-handler.js";
 
 app.get("/", (req, res) => {
-  throw.new Error('error')
   res.send("Welcome sunny");
 });
 
