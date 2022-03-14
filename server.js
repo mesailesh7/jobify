@@ -20,8 +20,8 @@ app.get("/", (req, res) => {
   res.send("Welcome sunny");
 });
 
-app.use("/app/v1/auth", authRouter);
-app.use("/app/v1/jobs", jobsRouter);
+app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/jobs", jobsRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandleMiddleware);
