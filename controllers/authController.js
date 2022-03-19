@@ -3,10 +3,7 @@ import { StatusCodes } from "http-status-codes";
 
 const register = async (req, res) => {
   const user = await User.create(req.body);
-  const defaultError = {
-    statusCode: StatusCodes,
-  };
-  res.status(StatusCodes.OK).json({ user });
+  res.status(StatusCodes.CREATED).json({ user });
 };
 
 const login = async (req, res) => {
