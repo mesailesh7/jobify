@@ -1,4 +1,4 @@
-import User from "../models/User.js ";
+import User from "../models/User.js";
 import { StatusCodes } from "http-status-codes";
 
 const register = async (req, res) => {
@@ -8,7 +8,7 @@ const register = async (req, res) => {
     throw new Error("Please provide all values");
   }
 
-  const user = await User.create(req.body);
+  const user = await User.create({ name, email, password });
   res.status(StatusCodes.CREATED).json({ user });
 };
 
