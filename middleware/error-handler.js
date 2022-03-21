@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 
 const errorHandlerMiddleware = (err, req, res, next) => {
-  console.log(err.message);
+  console.log(err);
 
   const defaultError = {
     StatusCodes: err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR,
@@ -20,7 +20,6 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     defaultError.msg = `${Object.keys(err.keyValue)} Field has to be unique`;
   }
 
-  // res.status(defaultError.StatusCodes).json({ msg: err });
   res.status(defaultError.StatusCodes).json({ msg: defaultError.msg });
 };
 
